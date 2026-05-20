@@ -1,4 +1,4 @@
-# 📘 Utrains CI/CD Reusable Pipeline Templates
+# CI/CD Reusable Pipeline Templates
 
 Welcome to the **Utrains CI/CD Template Repository**.
 
