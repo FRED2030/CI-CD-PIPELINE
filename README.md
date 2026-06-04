@@ -1,6 +1,6 @@
 # CI/CD Reusable Pipeline Templates
 
-Welcome to the **Utrains CI/CD Template Repository**.
+Welcome to the **CI/CD Reusable Repository**.
 
 This repository contains **enterprise-ready reusable GitHub Action workflows** that can be called from any application repository.  
 These templates encapsulate **build, scan, deploy, approval, and DevOps automation logic**, ensuring:
@@ -19,7 +19,7 @@ All templates are stored under:
 You can call any template from *another* repo using:
 
 ```yaml
-uses: Utrains/pipeline-templates/.github/workflows/<template>.yml@v1
+uses: reusable/pipeline-templates/.github/workflows/<template>.yml@v1
 ```
 
 ---
@@ -55,7 +55,7 @@ Call any template like:
 ```yaml
 jobs:
   sonar:
-    uses: Utrains/pipeline-templates/.github/workflows/sonar.yml@v1
+    uses: reusable/pipeline-templates/.github/workflows/sonar.yml@v1
     with:
       sonar_host: "https://sonar.example.com"
       project_name: "my-app"
@@ -91,7 +91,7 @@ jobs:
 ```yaml
 jobs:
   sonar:
-    uses: Utrains/pipeline-templates/.github/workflows/sonar.yml@v1
+    uses: reusable/pipeline-templates/.github/workflows/sonar.yml@v1
     with:
       sonar_host: "https://sonar.mycompany.com"
       project_name: "backend"
@@ -119,7 +119,7 @@ jobs:
 ```yaml
 jobs:
   build_java:
-    uses: Utrains/pipeline-templates/.github/workflows/build-java.yml@v1
+    uses: reusable/pipeline-templates/.github/workflows/build-java.yml@v1
     with:
       java_version: "21"
       run_tests: true
@@ -143,7 +143,7 @@ jobs:
 ```yaml
 jobs:
   build_dotnet:
-    uses: Utrains-pipeline-templates/.github/workflows/build-dotnet.yml@v1
+    uses: reusable-pipeline-templates/.github/workflows/build-dotnet.yml@v1
     with:
       dotnet_version: "8.0"
       project_path: "./src/MyApp"
@@ -166,7 +166,7 @@ jobs:
 ```yaml
 jobs:
   build_go:
-    uses: Utrains-pipeline-templates/.github/workflows/build-go.yml@v1
+    uses: reusable-pipeline-templates/.github/workflows/build-go.yml@v1
     with:
       go_version: "1.22"
 ```
@@ -190,7 +190,7 @@ jobs:
 ```yaml
 jobs:
   build_node:
-    uses: Utrains-pipeline-templates/.github/workflows/build-node.yml@v1
+    uses: reusable-pipeline-templates/.github/workflows/build-node.yml@v1
     with:
       node_version: "20"
 ```
@@ -219,7 +219,7 @@ jobs:
 ```yaml
 jobs:
   terraform:
-    uses: Utrains-pipeline-templates/.github/workflows/terraform.yml@v1
+    uses: reusable-pipeline-templates/.github/workflows/terraform.yml@v1
     with:
       working_directory: "infra/"
     secrets:
@@ -251,7 +251,7 @@ jobs:
 ```yaml
 jobs:
   docker:
-    uses: Utrains-pipeline-templates/.github/workflows/docker-build.yml@v1
+    uses: reusable-pipeline-templates/.github/workflows/docker-build.yml@v1
     with:
       image_name: "123456789012.dkr.ecr.us-east-1.amazonaws.com/app:latest"
     secrets:
@@ -275,7 +275,7 @@ jobs:
 ```yaml
 jobs:
   trivy:
-    uses: Utrains-pipeline-templates/.github/workflows/trivy-scan.yml@v1
+    uses: reusable-pipeline-templates/.github/workflows/trivy-scan.yml@v1
     with:
       image: "123456789012.dkr.ecr.us-east-1.amazonaws.com/app:latest"
 ```
@@ -298,7 +298,7 @@ jobs:
 ```yaml
 jobs:
   approve:
-    uses: Utrains-pipeline-templates/.github/workflows/approval.yml@v1
+    uses: reusable-pipeline-templates/.github/workflows/approval.yml@v1
     with:
       environment: "prod"
       message: "Prod deployment approval required."
@@ -333,7 +333,7 @@ jobs:
 ```yaml
 jobs:
   deploy:
-    uses: Utrains-pipeline-templates/.github/workflows/deploy-eks-helm.yml@v1
+    uses: reusable-pipeline-templates/.github/workflows/deploy-eks-helm.yml@v1
     with:
       cluster_name: "prod-eks"
       region: "us-east-1"
@@ -377,7 +377,7 @@ jobs:
 ```yaml
 jobs:
   deploy_argocd:
-    uses: Utrains-pipeline-templates/.github/workflows/deploy-eks-argocd.yml@v1
+    uses: reusable-pipeline-templates/.github/workflows/deploy-eks-argocd.yml@v1
     with:
       cluster_name: "prod"
       region: "us-east-1"
